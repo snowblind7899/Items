@@ -1,12 +1,13 @@
 public class ItemStorage { //object for storing and managing all available Item objects
-    private Item[] items;
-    private final int max_size = 50;
-    private int itemIndex = 0;
+    private Item[] items; 
+    private final int max_size = 50; //max # of items available in this storage object
+    private int itemIndex = 0; //tracks the index of the last available spot
 
     public ItemStorage(){ 
         items = new Item[max_size];
     }
 
+    //add items to the storage
     public void addItem(Item item){
         if(itemIndex >= max_size){
             System.out.println("Too many items, remove some before adding more");
@@ -16,6 +17,7 @@ public class ItemStorage { //object for storing and managing all available Item 
         }
     }
 
+    //removes last item
     public void removeItem(int index){
         if(itemIndex <= 0){
             System.out.println("No items to remove");
@@ -28,6 +30,7 @@ public class ItemStorage { //object for storing and managing all available Item 
         }
     }
 
+    //prints out the sotrage contents
     public void showStorage(){
         if(itemIndex == 0){
             System.out.println("\nNothing offered for auction");
